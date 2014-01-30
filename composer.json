@@ -1,0 +1,27 @@
+{
+	"name": "contao-community-alliance/composer-check",
+	"type": "project",
+	"description": "Composer client for Contao compatibility check",
+	"keywords": ["contao", "composer", "client", "check"],
+	"license": "LGPLv3",
+	"authors": [
+		{
+			"name": "Tristan Lins",
+			"email": "tristan.lins@bit3.de",
+			"homepage": "http://bit3.de",
+			"role": "Developer"
+		},
+		{
+			"name": "Andreas Isaak",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.4"
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
+}

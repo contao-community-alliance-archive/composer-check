@@ -1,0 +1,27 @@
+<xliff version="1.2"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" datatype="php">
+		<body>
+			<trans-unit id="summary_unsupported">
+				<source>PHP %version% is installed, to run composer you need to PHP 5.3.2 or newer.</source>
+			</trans-unit>
+			<trans-unit id="summary_5.3.2+">
+				<source>PHP %version% is installed, you are able to use composer.</source>
+			</trans-unit>
+			<trans-unit id="summary_5.4+">
+				<source>PHP %version% is installed, you are up to date.</source>
+			</trans-unit>
+
+			<trans-unit id="description_unsupported">
+				<source>Composer use Namespace which are only supported in PHP 5.3 or newer. We recommend to upgrade your PHP version. The best choice is PHP 5.4 or 5.5, which are realy faster than 5.3.</source>
+			</trans-unit>
+			<trans-unit id="description_5.3.2+">
+				<source>You use an supported but deprecated version of PHP. We recommend to upgrade your PHP version to 5.4 or 5.5, which are realy faster than 5.3.</source>
+			</trans-unit>
+			<trans-unit id="description_5.4+">
+				<source>You use a stable, fast and maintained version of PHP. This is perfect to run composer :-)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

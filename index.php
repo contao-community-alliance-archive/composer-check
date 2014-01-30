@@ -1,0 +1,98 @@
+<?php
+
+if (!class_exists('Runtime')) {
+	require __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
+}
+
+$runner = new ContaoCommunityAlliance_Composer_Check_CheckRunner();
+$multipleStatus = $runner->runAll();
+
+$states = array();
+foreach ($multipleStatus as $status) {
+	$states[] = $status->getState();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="<?php echo Runtime::$translator->getLanguage(); ?>">
+<head>
+	<meta charset="utf-8">
+	<title>Composer Check 1.0.0</title>
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="generator" content="Contao Community Alliance">
+	<link rel="stylesheet" href="assets/cca/style.css">
+	<link rel="stylesheet" href="assets/opensans/stylesheet.css">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+	<header>
+		<h1><a target="_blank" href="http://c-c-a.org/">Contao Community Alliance</a></h1>
+	</header>
+	<section>
+		<h2>Composer Check 1.0.0</h2>
+
+		<?php if (count(Runtime::$errors)): ?>
+			<h3><?php echo Runtime::$translator->translate('messages', 'errors.headline'); ?></h3>
+			<p><?php echo Runtime::$translator->translate('messages', 'errors.description'); ?></p>
+			<ul>
+				<?php foreach (Runtime::$errors as $error): ?>
+					<li class="error">
+						[<?php echo $error['errno']; ?>] <?php echo $error['errstr']; ?>
+						<span><?php echo $error['errfile']; ?>:<?php echo $error['errline']; ?></span>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+
+			<hr/>
+		<?php endif; ?>
+
+		<h3><?php echo Runtime::$translator->translate('messages', 'checks.headline'); ?></h3>
+		<ul>
+			<?php foreach ($multipleStatus as $status): ?>
+				<li class="check <?php echo $status->getState(); ?>">
+					<?php echo $status->getSummary() ?>
+					<span><?php echo $status->getDescription(); ?></span>
+				</li>
+			<?php endforeach; ?>
+			<!--
+			<li class="check ok">PHP 5.4.4-14+deb7u7<span>Die Mindestanforderung von PHP 5.3.4 ist erfüllt</span></li>
+			<li class="check ok">Suhosin <span>Suhosin ist korrekt konfiguriert oder nicht installiert</span></li>
+			<li class="check warning">Standort <span>Dein Server sind nicht optimal für Composer aufbereitet</span></li>
+			<li class="check error">etc ... <span>etc ...</span></li>
+			-->
+		</ul>
+
+		<hr/>
+
+		<h3><?php echo Runtime::$translator->translate('messages', 'status.headline'); ?></h3>
+		<?php if (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_ERROR, $states)): ?>
+			<p class="check error"><?php echo Runtime::$translator->translate('message', 'status.unsupported') ?></p>
+		<?php elseif (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN, $states)): ?>
+			<p class="check warning"><?php echo Runtime::$translator->translate('messages', 'status.maybe_supported') ?></p>
+			<p><a class="button">Composer installieren</a></p>
+		<?php elseif (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK, $states)): ?>
+			<p class="check ok"><?php echo Runtime::$translator->translate('messages', 'status.supported') ?></p>
+			<p><a class="button">Composer installieren</a></p>
+		<?php else: ?>
+			<p class="check unknown"><?php echo Runtime::$translator->translate('messages', 'status.unknown') ?></p>
+		<?php endif; ?>
+	</section>
+</div>
+
+<footer>
+	<div class="inside">
+		<p>&copy; <?php echo date('Y'); ?> Contao Community Alliance</p>
+		<ul>
+			<li><a target="_blank" href="http://c-c-a.org/ueber-composer">Mehr Informationen zu Composer</a></li>
+			<li><a target="_blank" href="https://github.com/contao-community-alliance/composer/issues">Composer
+					Ticketsystem</a></li>
+			<li><a target="_blank" href="http://c-c-a.org/">Website</a></li>
+			<li><a target="_blank" href="https://github.com/contao-community-alliance">Github</a></li>
+		</ul>
+	</div>
+</footer>
+
+</body>
+</html>

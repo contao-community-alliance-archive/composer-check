@@ -1,0 +1,34 @@
+<xliff version="1.2"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" datatype="php">
+		<body>
+			<trans-unit id="checks.headline">
+				<source>System information</source>
+			</trans-unit>
+
+			<trans-unit id="status.headline">
+				<source>System status</source>
+			</trans-unit>
+			<trans-unit id="status.unsupported">
+				<source>Composer is not supported on your system.</source>
+			</trans-unit>
+			<trans-unit id="status.maybe_supported">
+				<source>Composer may be supported on your system. Please read the details of the single checks.</source>
+			</trans-unit>
+			<trans-unit id="status.supported">
+				<source>Composer is supported on your system.</source>
+			</trans-unit>
+			<trans-unit id="status.unknown">
+				<source>We could not determine if Composer can be run on your system.</source>
+			</trans-unit>
+
+			<trans-unit id="errors.headline">
+				<source>Runtime errors</source>
+			</trans-unit>
+			<trans-unit id="errors.description">
+				<source>Some errors occurred while running the check!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
