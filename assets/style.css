@@ -204,8 +204,7 @@
     margin:10px 0;
   }
 
-  li.check:before, 
-  p.check:before {
+  .check:before {
     font-size:12px;
   }
 
@@ -220,20 +219,17 @@
     display:inline-block;
   }
 
-  li.ok:before, 
-  p.ok:before {
+  .ok:before {
     color:#6ca610;
     content: "\e602";
   }
 
-  li.warning:before,
-  p.warning:before {
+  .warning:before {
     color:#d57e17;
     content: "\e617";
   }
 
-  li.error:before,
-  p.error:before {
+  .error:before {
     color:#CE3B23;
     content: "\e603";
   }
