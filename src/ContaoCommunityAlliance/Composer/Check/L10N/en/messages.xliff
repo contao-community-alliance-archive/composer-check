@@ -22,6 +22,9 @@
 			<trans-unit id="status.unknown">
 				<source>We could not determine if Composer can be run on your system.</source>
 			</trans-unit>
+			<trans-unit id="status.install">
+				<source>Install composer</source>
+			</trans-unit>
 
 			<trans-unit id="errors.headline">
 				<source>Runtime errors</source>

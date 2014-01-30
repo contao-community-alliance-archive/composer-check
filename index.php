@@ -28,7 +28,7 @@ foreach ($multipleStatus as $status) {
 
 <div id="wrapper">
 	<header>
-		<h1><a target="_blank" href="http://c-c-a.org/">Contao Community Alliance</a></h1>
+		<h1><a target="_blank" href="http://c-c-a.org/"><?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></a></h1>
 	</header>
 	<section>
 		<h2>Composer Check 1.0.0</h2>
@@ -60,28 +60,27 @@ foreach ($multipleStatus as $status) {
 
 		<h3><?php echo Runtime::$translator->translate('messages', 'status.headline'); ?></h3>
 		<?php if (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_ERROR, $states)): ?>
-			<p class="check error"><?php echo Runtime::$translator->translate('message', 'status.unsupported') ?></p>
+			<p class="check error"><?php echo Runtime::$translator->translate('messages', 'status.unsupported') ?></p>
 		<?php elseif (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN, $states)): ?>
-			<p class="check warning"><?php echo Runtime::$translator->translate('messages', 'status.maybe_supported') ?></p>
-			<p><a class="button">Composer installieren</a></p>
+			<p class="check warning"><?php echo Runtime::$translator->translate('messages', 'status.maybe_supported'); ?></p>
+			<p><a class="button"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
 		<?php elseif (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK, $states)): ?>
-			<p class="check ok"><?php echo Runtime::$translator->translate('messages', 'status.supported') ?></p>
-			<p><a class="button">Composer installieren</a></p>
+			<p class="check ok"><?php echo Runtime::$translator->translate('messages', 'status.supported'); ?></p>
+			<p><a class="button"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
 		<?php else: ?>
-			<p class="check unknown"><?php echo Runtime::$translator->translate('messages', 'status.unknown') ?></p>
+			<p class="check unknown"><?php echo Runtime::$translator->translate('messages', 'status.unknown'); ?></p>
 		<?php endif; ?>
 	</section>
 </div>
 
 <footer>
 	<div class="inside">
-		<p>&copy; <?php echo date('Y'); ?> Contao Community Alliance</p>
+		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></p>
 		<ul>
-			<li><a target="_blank" href="http://c-c-a.org/ueber-composer">Mehr Informationen zu Composer</a></li>
-			<li><a target="_blank" href="https://github.com/contao-community-alliance/composer/issues">Composer
-					Ticketsystem</a></li>
-			<li><a target="_blank" href="http://c-c-a.org/">Website</a></li>
-			<li><a target="_blank" href="https://github.com/contao-community-alliance">Github</a></li>
+			<li><a target="_blank" href="http://c-c-a.org/ueber-composer"><?php echo Runtime::$translator->translate('other', 'more_information') ?></a></li>
+			<li><a target="_blank" href="https://github.com/contao-community-alliance/composer/issues"><?php echo Runtime::$translator->translate('other', 'ticket_system') ?></a></li>
+			<li><a target="_blank" href="http://c-c-a.org/"><?php echo Runtime::$translator->translate('other', 'website') ?></a></li>
+			<li><a target="_blank" href="https://github.com/contao-community-alliance"><?php echo Runtime::$translator->translate('other', 'github') ?></a></li>
 		</ul>
 	</div>
 </footer>
