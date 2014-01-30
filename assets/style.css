@@ -193,10 +193,11 @@
     width:48%;
     display:inline-block;
     position:relative;
+    vertical-align:top;
   }
 
   li.check:nth-child(even) {
-    margin-left:3%;
+    margin-left:4%;
   }
 
   p.check {
@@ -233,19 +234,6 @@
 
   li.error:before,
   p.error:before {
-    color:#CE3B23;
-    content: "\e603";
-  }
-
-  li.runtime_error {
-    padding-left:25px;
-    display:inline-block;
-    position:relative;
-  }
-  li.runtime_error:before {
-    top:5px;
-    position:absolute;
-    left:0;
     color:#CE3B23;
     content: "\e603";
   }

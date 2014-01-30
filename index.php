@@ -38,7 +38,7 @@ foreach ($multipleStatus as $status) {
 			<p><?php echo Runtime::$translator->translate('messages', 'errors.description'); ?></p>
 			<ul>
 				<?php foreach (Runtime::$errors as $error): ?>
-					<li class="error">
+					<li class="check error">
 						[<?php echo $error['errno']; ?>] <?php echo $error['errstr']; ?>
 						<span><?php echo $error['errfile']; ?>:<?php echo $error['errline']; ?></span>
 					</li>
@@ -50,18 +50,10 @@ foreach ($multipleStatus as $status) {
 
 		<h3><?php echo Runtime::$translator->translate('messages', 'checks.headline'); ?></h3>
 		<ul>
-			<?php foreach ($multipleStatus as $status): ?>
-				<li class="check <?php echo $status->getState(); ?>">
+			<?php foreach ($multipleStatus as $status): ?><li class="check <?php echo $status->getState(); ?>">
 					<?php echo $status->getSummary() ?>
 					<span><?php echo $status->getDescription(); ?></span>
-				</li>
-			<?php endforeach; ?>
-			<!--
-			<li class="check ok">PHP 5.4.4-14+deb7u7<span>Die Mindestanforderung von PHP 5.3.4 ist erfüllt</span></li>
-			<li class="check ok">Suhosin <span>Suhosin ist korrekt konfiguriert oder nicht installiert</span></li>
-			<li class="check warning">Standort <span>Dein Server sind nicht optimal für Composer aufbereitet</span></li>
-			<li class="check error">etc ... <span>etc ...</span></li>
-			-->
+				</li><?php endforeach; ?>
 		</ul>
 
 		<hr/>
