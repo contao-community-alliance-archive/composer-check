@@ -19,6 +19,8 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 		'memory_limit'             => 'ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck',
 		// Process
 		'process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_ExecuteDetachedCheck',
+		// Contao
+		'contao_safe_mode_hack'    => 'ContaoCommunityAlliance_Composer_Check_ContaoSafeModeHackCheck',
 	);
 
 	/**
