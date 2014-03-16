@@ -12,6 +12,9 @@
 			<trans-unit id="php_curl">
 				<source>Check if the PHP CURL extension is enabled.</source>
 			</trans-unit>
+			<trans-unit id="php_apc">
+				<source>Check if the PHP APC extension is enabled.</source>
+			</trans-unit>
 			<trans-unit id="php_allow_url_fopen">
 				<source>Check if the allow_url_fopen is enabled.</source>
 			</trans-unit>
