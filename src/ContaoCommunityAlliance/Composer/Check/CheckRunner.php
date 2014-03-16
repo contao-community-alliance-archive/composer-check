@@ -16,7 +16,7 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 	public static $checks = array(
 		// PHP
 		'php_version'              => 'ContaoCommunityAlliance_Composer_Check_PHPVersionCheck',
-		'memory_limit'             => 'ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck',
+		'php_memory_limit'         => 'ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck',
 		'php_curl'                 => 'ContaoCommunityAlliance_Composer_Check_PHPCurlCheck',
 		'php_allow_url_fopen'      => 'ContaoCommunityAlliance_Composer_Check_PHPAllowUrlFopenCheck',
 		// Process

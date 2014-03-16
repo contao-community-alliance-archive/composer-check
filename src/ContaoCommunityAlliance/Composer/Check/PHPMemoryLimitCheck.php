@@ -11,7 +11,7 @@
  * @license    LGPL-3.0+
  * @link       http://c-c-a.org
  */
-class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
+class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 	implements ContaoCommunityAlliance_Composer_Check_CheckInterface
 {
 	/**
@@ -26,12 +26,12 @@ class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
 
 			$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK;
 			$summary     = Runtime::$translator->translate(
-				'memory_limit',
+				'php_memory_limit',
 				'summary_unlimited',
 				array('%memory_limit%' => $memoryLimitHumanReadable)
 			);
 			$description = Runtime::$translator->translate(
-				'memory_limit',
+				'php_memory_limit',
 				'description_unlimited',
 				array('%memory_limit%' => $memoryLimitHumanReadable)
 			);
@@ -47,12 +47,12 @@ class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
 			) {
 				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK;
 				$summary     = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'summary_increased',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
 				$description = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'description_increased',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
@@ -60,12 +60,12 @@ class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
 			else if ($memoryLimit >= 1024 * 1024 * 1024) {
 				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK;
 				$summary     = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'summary_good',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
 				$description = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'description_good',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
@@ -73,12 +73,12 @@ class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
 			else if ($memoryLimit >= 512 * 1024 * 1024) {
 				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN;
 				$summary     = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'summary_okay',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
 				$description = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'description_okay',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
@@ -86,12 +86,12 @@ class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
 			else {
 				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_ERROR;
 				$summary     = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'summary_low',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
 				$description = Runtime::$translator->translate(
-					'memory_limit',
+					'php_memory_limit',
 					'description_low',
 					array('%memory_limit%' => $memoryLimitHumanReadable)
 				);
@@ -99,7 +99,7 @@ class ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck
 		}
 
 		return new ContaoCommunityAlliance_Composer_Check_Status(
-			'memory_limit', $state, $summary, $description
+			'php_memory_limit', $state, $summary, $description
 		);
 	}
 
