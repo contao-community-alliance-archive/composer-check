@@ -91,10 +91,13 @@ $requestUri            = preg_replace('~\?install.*~', '', $_SERVER['REQUEST_URI
 if ($composerInstalled) {
 	$installationMessage = Runtime::$translator->translate('messages', 'install.installed');
 }
-if (!$installationSupported) {
+else if (!$contaoPath) {
+	$installationMessage = Runtime::$translator->translate('messages', 'install.missing-contao');
+}
+else if (!$installationSupported) {
 	$installationMessage = Runtime::$translator->translate('messages', 'install.unsupported');
 }
-if ($contaoPath && $installationSupported && !$composerInstalled && isset($_GET['install'])) {
+else if (isset($_GET['install'])) {
 	$tempFile      = tempnam(sys_get_temp_dir(), 'composer_');
 	$tempDirectory = tempnam(sys_get_temp_dir(), 'composer_');
 
@@ -187,10 +190,10 @@ if ($contaoPath && $installationSupported && !$composerInstalled && isset($_GET[
 		<?php endif; ?>
 
 		<?php if ($installationMessage): ?>
-			<p class="check <?php if (!$installationSupported): ?>error<?php else: ?>ok<?php endif; ?>"><?= $installationMessage ?></p>
+			<p class="check <?php if (!$contaoPath || !$installationSupported): ?>error<?php else: ?>ok<?php endif; ?>"><?php echo $installationMessage ?></p>
 		<?php endif; ?>
 		<?php if ($installationSupported && $contaoPath && !$composerInstalled): ?>
-			<p><a class="button" href="<?= $requestUri ?>?install"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
+			<p><a class="button" href="<?php echo $requestUri ?>?install"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
 		<?php else: ?>
 			<p><span class="button disabled"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></span></p>
 		<?php endif; ?>
