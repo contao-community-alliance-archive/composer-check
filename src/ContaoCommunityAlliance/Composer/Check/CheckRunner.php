@@ -3,7 +3,7 @@
 /**
  * System Check for the Contao Composer Client
  *
- * PHP Version 5.3
+ * PHP Version 5.1
  *
  * @copyright  bit3 UG 2013
  * @author     Tristan Lins <tristan.lins@bit3.de>
