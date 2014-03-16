@@ -4,7 +4,7 @@
 	<file original="" source-language="en" datatype="php">
 		<body>
 			<trans-unit id="summary_unlimited">
-				<source>Your memory limit is not limited.</source>
+				<source>Your memory usage is not limited.</source>
 			</trans-unit>
 			<trans-unit id="summary_good">
 				<source>Your memory limit is %memory_limit%, which is good.</source>
