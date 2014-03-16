@@ -15,9 +15,9 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 {
 	public static $checks = array(
 		// PHP
-		'php_version'              => 'ContaoCommunityAlliance_Composer_Check_PHP_PHPVersionCheck',
+		'php_version'              => 'ContaoCommunityAlliance_Composer_Check_PHPVersionCheck',
 		// Process
-		'process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_Process_ExecuteDetachedCheck',
+		'process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_ExecuteDetachedCheck',
 	);
 
 	/**
