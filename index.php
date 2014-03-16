@@ -192,11 +192,11 @@ else if (isset($_GET['install'])) {
 		<?php if ($installationMessage): ?>
 			<p class="check <?php if (!$contaoPath || !$installationSupported): ?>error<?php else: ?>ok<?php endif; ?>"><?php echo $installationMessage ?></p>
 		<?php endif; ?>
-		<?php if ($installationSupported && $contaoPath && !$composerInstalled): ?>
+		<?php if (!$composerInstalled): if ($installationSupported && $contaoPath): ?>
 			<p><a class="button" href="<?php echo $requestUri ?>?install"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
 		<?php else: ?>
 			<p><span class="button disabled"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></span></p>
-		<?php endif; ?>
+		<?php endif; endif; ?>
 	</section>
 </div>
 
