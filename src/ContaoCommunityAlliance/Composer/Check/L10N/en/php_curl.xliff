@@ -1,0 +1,21 @@
+<xliff version="1.2"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" datatype="php">
+		<body>
+			<trans-unit id="summary_enabled">
+				<source>CURL extension is enabled</source>
+			</trans-unit>
+			<trans-unit id="summary_disabled">
+				<source>CURL extension is disabled</source>
+			</trans-unit>
+
+			<trans-unit id="description_enabled">
+				<source>CURL extension is required by the Contao Composer Client.</source>
+			</trans-unit>
+			<trans-unit id="description_disabled">
+				<source>CURL extension is required by the Contao Composer Client.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
