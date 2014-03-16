@@ -44,7 +44,7 @@ class console
 		$selectedChecks = array();
 		foreach ($argv as $arg) {
 			if (isset(ContaoCommunityAlliance_Composer_Check_CheckRunner::$checks[$arg])) {
-				$selectedChecks = $arg;
+				$selectedChecks[] = $arg;
 			}
 		}
 		if (empty($selectedChecks)) {
