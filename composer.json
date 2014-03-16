@@ -1,7 +1,7 @@
 {
 	"name": "contao-community-alliance/composer-check",
 	"type": "project",
-	"description": "Composer client for Contao compatibility check",
+	"description": "Composer client for the contao compatibility check",
 	"keywords": ["contao", "composer", "client", "check"],
 	"license": "LGPLv3",
 	"authors": [
@@ -13,6 +13,8 @@
 		},
 		{
 			"name": "Andreas Isaak",
+			"email": "info@andreas-isaak.de",
+			"homepage": "http://andreas-isaak.de",
 			"role": "Developer"
 		}
 	],
