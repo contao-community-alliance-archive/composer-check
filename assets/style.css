@@ -189,7 +189,7 @@
   }
 
   li.check {
-    padding-left:25px;
+    padding-left:30px;
     width:48%;
     display:inline-block;
     position:relative;
@@ -205,7 +205,7 @@
   }
 
   .check:before {
-    font-size:12px;
+    font-size:18px;
   }
 
   li.check:before {
@@ -216,6 +216,8 @@
 
   p.check:before {
     margin-right:10px;
+    position:relative;
+    top:1px;
     display:inline-block;
   }
 
@@ -226,7 +228,7 @@
 
   .warning:before {
     color:#d57e17;
-    content: "\e617";
+    content: "\e62e";
   }
 
   .error:before {
