@@ -17,8 +17,7 @@
 				<source>The Suhosin extensions is known to make problems with composer.</source>
 			</trans-unit>
 			<trans-unit id="description_whitelisted">
-				<source>PHAR files are whitelisted in the suhosin executor limitation, this work in most
-					cases but may make problems in some cases.</source>
+				<source>PHAR files are whitelisted in the suhosin executor limitation, this work in most cases but may make problems in some cases.</source>
 			</trans-unit>
 			<trans-unit id="description_enabled">
 				<source>The Suhosin extensions is known to make problems with composer.</source>
