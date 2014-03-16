@@ -137,7 +137,7 @@ else if (isset($_GET['install'])) {
 <html lang="<?php echo Runtime::$translator->getLanguage(); ?>">
 <head>
 	<meta charset="utf-8">
-	<title>Composer Check 1.0.0</title>
+	<title>Composer Check 1.0</title>
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="generator" content="Contao Community Alliance">
 	<link rel="stylesheet" href="assets/cca/style.css">
@@ -151,7 +151,7 @@ else if (isset($_GET['install'])) {
 		<h1><a target="_blank" href="http://c-c-a.org/"><?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></a></h1>
 	</header>
 	<section>
-		<h2>Composer Check 1.0.0</h2>
+		<h2>Composer Check 1.0</h2>
 
 		<?php if (count(Runtime::$errors)): ?>
 			<h3><?php echo Runtime::$translator->translate('messages', 'errors.headline'); ?></h3>
