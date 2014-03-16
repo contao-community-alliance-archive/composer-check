@@ -285,6 +285,21 @@
     box-shadow: inset 0px 1px 0px #a6321f, 0px 2px 0px 0px #7c2618, 0px 5px 3px #999;
   }
 
+  .button.disabled {
+    cursor: default;
+    -webkit-box-shadow: inset 0px 1px 0px #a6a6a6, 0px 5px 0px 0px #7c7c7c, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #a6a6a6, 0px 5px 0px 0px #7c7c7c, 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px #a6a6a6, 0px 5px 0px 0px #7c7c7c, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #a6a6a6, 0px 5px 0px 0px #7c7c7c, 0px 10px 5px #999;
+    text-shadow:1px 1px 0px #7c7c7c;
+    background-color:rgb(166,166,166);
+    background-image: linear-gradient(bottom, rgb(166,166,166) 0%, rgb(206,206,206) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(206,206,206) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(206,206,206) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(206,206,206) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(206,206,206) 100%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(166,166,166)), color-stop(1, rgb(206,206,206)));
+  }
  /*------------------------------------------------------------------------*/
 
   footer {

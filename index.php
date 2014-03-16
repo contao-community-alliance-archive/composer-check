@@ -12,6 +12,123 @@ foreach ($multipleStatus as $status) {
 	$states[] = $status->getState();
 }
 
+function getContaoPath()
+{
+	$contaoPath = getcwd();
+
+	do {
+		$localconfigPath = $contaoPath
+			. DIRECTORY_SEPARATOR . 'system'
+			. DIRECTORY_SEPARATOR . 'config'
+			. DIRECTORY_SEPARATOR . 'localconfig.php';
+
+		if (file_exists($localconfigPath)) {
+			return $contaoPath;
+		}
+
+		$contaoPath = dirname($contaoPath);
+	}
+	while ($contaoPath != '.' && $contaoPath != '/' && $contaoPath);
+
+	return false;
+}
+
+function isComposerInstalled($contaoPath)
+{
+	return is_dir(
+		$contaoPath
+		. DIRECTORY_SEPARATOR . 'system'
+		. DIRECTORY_SEPARATOR . 'modules'
+		. DIRECTORY_SEPARATOR . '!composer'
+	);
+}
+
+function mirror($source, $target)
+{
+	if (is_dir($source)) {
+		mkdir($target, 0777, true);
+
+		$files = scandir($source);
+
+		foreach ($files as $file) {
+			if ($file != '.' && $file != '..') {
+				mirror(
+					$source . DIRECTORY_SEPARATOR . $file,
+					$target . DIRECTORY_SEPARATOR . $file
+				);
+			}
+		}
+	}
+	else {
+		copy($source, $target);
+	}
+}
+
+function remove($path)
+{
+	if (is_dir($path)) {
+		$files = scandir($path);
+
+		foreach ($files as $file) {
+			if ($file != '.' && $file != '..') {
+				remove($path . DIRECTORY_SEPARATOR . $file);
+			}
+		}
+
+		rmdir($path);
+	}
+	else {
+		unlink($path);
+	}
+}
+
+$contaoPath            = getContaoPath();
+$installationSupported = class_exists('ZipArchive');
+$composerInstalled     = isComposerInstalled($contaoPath);
+$installationMessage   = false;
+$requestUri            = preg_replace('~\?install.*~', '', $_SERVER['REQUEST_URI']);
+
+if ($composerInstalled) {
+	$installationMessage = Runtime::$translator->translate('messages', 'install.installed');
+}
+if (!$installationSupported) {
+	$installationMessage = Runtime::$translator->translate('messages', 'install.unsupported');
+}
+if ($contaoPath && $installationSupported && !$composerInstalled && isset($_GET['install'])) {
+	$tempFile      = tempnam(sys_get_temp_dir(), 'composer_');
+	$tempDirectory = tempnam(sys_get_temp_dir(), 'composer_');
+
+	unlink($tempDirectory);
+	mkdir($tempDirectory);
+
+	$archive = file_get_contents('https://github.com/contao-community-alliance/composer/archive/master.zip');
+	file_put_contents($tempFile, $archive);
+	unset($archive);
+
+	$zip = new ZipArchive();
+	$zip->open($tempFile);
+	$zip->extractTo($tempDirectory);
+
+	mirror(
+		$tempDirectory
+		. DIRECTORY_SEPARATOR . 'composer-master'
+		. DIRECTORY_SEPARATOR . 'src'
+		. DIRECTORY_SEPARATOR . 'system'
+		. DIRECTORY_SEPARATOR . 'modules'
+		. DIRECTORY_SEPARATOR . '!composer',
+		$contaoPath
+		. DIRECTORY_SEPARATOR . 'system'
+		. DIRECTORY_SEPARATOR . 'modules'
+		. DIRECTORY_SEPARATOR . '!composer'
+	);
+
+	remove($tempFile);
+	remove($tempDirectory);
+
+	$composerInstalled   = true;
+	$installationMessage = Runtime::$translator->translate('messages', 'install.done');
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo Runtime::$translator->getLanguage(); ?>">
@@ -63,12 +180,19 @@ foreach ($multipleStatus as $status) {
 			<p class="check error"><?php echo Runtime::$translator->translate('messages', 'status.unsupported') ?></p>
 		<?php elseif (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN, $states)): ?>
 			<p class="check warning"><?php echo Runtime::$translator->translate('messages', 'status.maybe_supported'); ?></p>
-			<p><a class="button"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
 		<?php elseif (in_array(ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK, $states)): ?>
 			<p class="check ok"><?php echo Runtime::$translator->translate('messages', 'status.supported'); ?></p>
-			<p><a class="button"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
 		<?php else: ?>
 			<p class="check unknown"><?php echo Runtime::$translator->translate('messages', 'status.unknown'); ?></p>
+		<?php endif; ?>
+
+		<?php if ($installationMessage): ?>
+			<p class="check <?php if (!$installationSupported): ?>error<?php else: ?>ok<?php endif; ?>"><?= $installationMessage ?></p>
+		<?php endif; ?>
+		<?php if ($installationSupported && $contaoPath && !$composerInstalled): ?>
+			<p><a class="button" href="<?= $requestUri ?>?install"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></a></p>
+		<?php else: ?>
+			<p><span class="button disabled"><?php echo Runtime::$translator->translate('messages', 'status.install'); ?></span></p>
 		<?php endif; ?>
 	</section>
 </div>

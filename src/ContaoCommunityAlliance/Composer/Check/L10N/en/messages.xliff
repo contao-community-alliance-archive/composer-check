@@ -32,6 +32,19 @@
 			<trans-unit id="errors.description">
 				<source>Some errors occurred while running the check!</source>
 			</trans-unit>
+
+			<trans-unit id="install.installed">
+				<source>Composer is already installed.</source>
+			</trans-unit>
+			<trans-unit id="install.missing-contao">
+				<source>Installation not possible, the Contao installation could not be found.</source>
+			</trans-unit>
+			<trans-unit id="install.unsupported">
+				<source>Installation not possible, the ZipArchive extension is required.</source>
+			</trans-unit>
+			<trans-unit id="install.done">
+				<source>Installation finished, in the Contao Backend you find a new menu entry "Package management".</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
