@@ -29,7 +29,7 @@
 				<source>A memory limit of 512 MiB is the minimum to run composer, but it may be too less in growing environments.</source>
 			</trans-unit>
 			<trans-unit id="description_increased">
-				<source>We have increased the memory limit to 1024 MiB, if required it is possible to increase it to a higher value.</source>
+				<source>We have increased the memory limit to %memory_limit%, if required it is possible to increase it to a higher value.</source>
 			</trans-unit>
 			<trans-unit id="description_low">
 				<source>A memory limit of 512 MiB is the minimum to run composer, it may run with %memory_limit% but it is not supposed to work.</source>

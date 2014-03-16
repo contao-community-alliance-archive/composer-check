@@ -49,12 +49,12 @@ class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 				$summary     = Runtime::$translator->translate(
 					'php_memory_limit',
 					'summary_increased',
-					array('%memory_limit%' => $memoryLimitHumanReadable)
+					array('%memory_limit%' => '1024 MiB')
 				);
 				$description = Runtime::$translator->translate(
 					'php_memory_limit',
 					'description_increased',
-					array('%memory_limit%' => $memoryLimitHumanReadable)
+					array('%memory_limit%' => '1024 MiB')
 				);
 			}
 			else if ($memoryLimit >= 1024 * 1024 * 1024) {
