@@ -18,6 +18,7 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 		'php_version'              => 'ContaoCommunityAlliance_Composer_Check_PHPVersionCheck',
 		'memory_limit'             => 'ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck',
 		'php_curl'                 => 'ContaoCommunityAlliance_Composer_Check_PHPCurlCheck',
+		'php_allow_url_fopen'      => 'ContaoCommunityAlliance_Composer_Check_PHPAllowUrlFopenCheck',
 		// Process
 		'process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_ExecuteDetachedCheck',
 		// Contao
