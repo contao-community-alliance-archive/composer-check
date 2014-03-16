@@ -6,6 +6,9 @@
 			<trans-unit id="php_version">
 				<source>Check if the PHP version is compatible.</source>
 			</trans-unit>
+			<trans-unit id="memory_limit">
+				<source>Check the memory limit.</source>
+			</trans-unit>
 			<trans-unit id="process_execute_detached">
 				<source>Check if detached execution is possible.</source>
 			</trans-unit>

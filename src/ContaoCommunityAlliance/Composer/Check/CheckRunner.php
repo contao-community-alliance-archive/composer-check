@@ -16,6 +16,7 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 	public static $checks = array(
 		// PHP
 		'php_version'              => 'ContaoCommunityAlliance_Composer_Check_PHPVersionCheck',
+		'memory_limit'             => 'ContaoCommunityAlliance_Composer_Check_MemoryLimitCheck',
 		// Process
 		'process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_ExecuteDetachedCheck',
 	);
