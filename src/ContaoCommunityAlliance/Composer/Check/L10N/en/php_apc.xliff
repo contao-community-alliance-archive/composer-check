@@ -4,7 +4,7 @@
 	<file original="" source-language="en" datatype="php">
 		<body>
 			<trans-unit id="summary_apcu_enabled">
-				<source>APCU extension is enabled</source>
+				<source>APCu extension is enabled</source>
 			</trans-unit>
 			<trans-unit id="summary_disabled">
 				<source>APC extension is disabled</source>
@@ -14,7 +14,7 @@
 			</trans-unit>
 
 			<trans-unit id="description_apcu_enabled">
-				<source>The ACPU extension is known to work with composer.</source>
+				<source>The ACPu extension is known to work with composer.</source>
 			</trans-unit>
 			<trans-unit id="description_disabled">
 				<source>The APC extensions opcode cache is known to make problems with composer.</source>
