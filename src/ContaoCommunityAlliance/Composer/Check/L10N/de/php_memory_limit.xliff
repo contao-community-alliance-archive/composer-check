@@ -1,0 +1,42 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="php_memory_limit.php" source-language="en">
+		<body>
+			<trans-unit id="summary_unlimited">
+				<source>Your memory usage is not limited.</source>
+				<target>Die Speichernutzung ist nicht begrenzt.</target>
+			</trans-unit>
+			<trans-unit id="summary_good">
+				<source>Your memory limit is %memory_limit%, which is good.</source>
+				<target>Das Speicherlimit ist %memory_limit%, was sehr gut ist.</target>
+			</trans-unit>
+			<trans-unit id="summary_okay">
+				<source>Your memory limit is %memory_limit%, which is okay.</source>
+				<target>Das Speicherlimit ist %memory_limit%, was ok ist.</target>
+			</trans-unit>
+			<trans-unit id="summary_increased">
+				<source>Your memory limit is increased to %memory_limit%.</source>
+			</trans-unit>
+			<trans-unit id="summary_low">
+				<source>Your memory limit is %memory_limit%, which is to low.</source>
+				<target>Das Speicherlimit ist %memory_limit%, was zu wenig ist.</target>
+			</trans-unit>
+
+			<trans-unit id="description_unlimited">
+				<source>An unlimited memory limit is perfect to run composer in every environment.</source>
+				<target>Eine unbegrenzte Speichernutzung ist perfekt für den Betrieb von Composer in jedem System.</target>
+			</trans-unit>
+			<trans-unit id="description_good">
+				<source>A memory limit of 1024 MiB or higher is pretty good run composer, even in growing environments.</source>
+			</trans-unit>
+			<trans-unit id="description_okay">
+				<source>A memory limit of 512 MiB is the minimum to run composer, but it may be too less in growing environments.</source>
+			</trans-unit>
+			<trans-unit id="description_increased">
+				<source>We have increased the memory limit to %memory_limit%, if required it is possible to increase it to a higher value.</source>
+			</trans-unit>
+			<trans-unit id="description_low">
+				<source>A memory limit of 512 MiB is the minimum to run composer, it may run with %memory_limit% but it is not supposed to work.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

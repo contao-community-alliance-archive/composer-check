@@ -1,0 +1,28 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="" source-language="en">
+		<body>
+			<trans-unit id="summary_apcu_enabled">
+				<source>APCu extension is enabled</source>
+				<target>Die APCu Extension ist aktiviert</target>
+			</trans-unit>
+			<trans-unit id="summary_disabled">
+				<source>APC extension is disabled</source>
+				<target>Die APCu Extension ist deaktiviert</target>
+			</trans-unit>
+			<trans-unit id="summary_enabled">
+				<source>APC extension is enabled</source>
+				<target>Die APC Extension ist aktiviert</target>
+			</trans-unit>
+
+			<trans-unit id="description_apcu_enabled">
+				<source>The ACPu extension is known to work with composer.</source>
+			</trans-unit>
+			<trans-unit id="description_disabled">
+				<source>The APC extensions opcode cache is known to make problems with composer.</source>
+			</trans-unit>
+			<trans-unit id="description_enabled">
+				<source>The APC extensions opcode cache is known to make problems with composer.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

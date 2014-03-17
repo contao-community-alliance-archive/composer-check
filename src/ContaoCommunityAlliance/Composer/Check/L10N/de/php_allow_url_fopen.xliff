@@ -1,0 +1,23 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="php_allow_url_fopen.php" source-language="en">
+		<body>
+			<trans-unit id="summary_enabled">
+				<source>allow_url_fopen is enabled</source>
+				<target>allow_url_fopen ist aktiviert</target>
+			</trans-unit>
+			<trans-unit id="summary_disabled">
+				<source>allow_url_fopen is disabled</source>
+				<target>allow_url_fopen ist deaktiviert</target>
+			</trans-unit>
+
+			<trans-unit id="description_enabled">
+				<source>allow_url_fopen is required by composer to download files.</source>
+				<target>allow_url_fopen wird von Composer für den Download der Dateien benötigt.</target>
+			</trans-unit>
+			<trans-unit id="description_disabled">
+				<source>allow_url_fopen is required by composer to download files.</source>
+				<target>allow_url_fopen wird von Composer für den Download der Dateien benötigt.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

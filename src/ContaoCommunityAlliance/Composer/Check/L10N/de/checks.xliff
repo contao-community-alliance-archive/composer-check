@@ -1,0 +1,37 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="checks.php" source-language="en">
+		<body>
+			<trans-unit id="php_version">
+				<source>Check if the PHP version is compatible.</source>
+				<target>Prüfe ob die PHP-Version kompatibel ist.</target>
+			</trans-unit>
+			<trans-unit id="php_memory_limit">
+				<source>Check the memory limit.</source>
+				<target>Prüfe die maximale Speichernutzung.</target>
+			</trans-unit>
+			<trans-unit id="php_curl">
+				<source>Check if the PHP CURL extension is enabled.</source>
+				<target>Prüfe ob die CURL Extension aktiviert ist.</target>
+			</trans-unit>
+			<trans-unit id="php_apc">
+				<source>Check if the PHP APC extension is enabled.</source>
+				<target>Prüfe ob die PHP Extension APC aktiviert ist.</target>
+			</trans-unit>
+			<trans-unit id="php_suhosin">
+				<source>Check if the PHP suhosin extension is enabled.</source>
+				<target>Prüfe ob die PHP Extension Suhosin aktiviert ist.</target>
+			</trans-unit>
+			<trans-unit id="php_allow_url_fopen">
+				<source>Check if the allow_url_fopen is enabled.</source>
+				<target>Prüfe ob allow_url_fopen aktiviert ist.</target>
+			</trans-unit>
+			<trans-unit id="process_execute_detached">
+				<source>Check if detached execution is possible.</source>
+			</trans-unit>
+			<trans-unit id="contao_safe_mode_hack">
+				<source>Check if the Contao SMH is disabled.</source>
+				<target>Prüfe ob der Contao SMH deaktiviert ist.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

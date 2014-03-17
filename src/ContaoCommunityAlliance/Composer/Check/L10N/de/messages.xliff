@@ -1,0 +1,61 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="messages.php" source-language="en">
+		<body>
+			<trans-unit id="checks.headline">
+				<source>System information</source>
+				<target>Systeminformationen</target>
+			</trans-unit>
+
+			<trans-unit id="status.headline">
+				<source>System status</source>
+				<target>Systemstatus</target>
+			</trans-unit>
+			<trans-unit id="status.unsupported">
+				<source>Composer is not supported on your system.</source>
+				<target>Composer wird auf deinem System nicht unterstützt.</target>
+			</trans-unit>
+			<trans-unit id="status.maybe_supported">
+				<source>Composer may be supported on your system. Please read the details of the single checks.</source>
+				<target>Composer könnte möglicherweise auf deinem System verwendet werden. Bitte ließ die weiteren Informationen der einzelnen Checks.</target>
+			</trans-unit>
+			<trans-unit id="status.supported">
+				<source>Composer is supported on your system.</source>
+				<target>Composer wird auf deinem System unterstützt.</target>
+			</trans-unit>
+			<trans-unit id="status.unknown">
+				<source>We could not determine if Composer can be run on your system.</source>
+				<target>Wir konnten nicht ermitteln ob Composer auf dem System funktionieren würde.</target>
+			</trans-unit>
+			<trans-unit id="status.install">
+				<source>Install composer</source>
+				<target>Composer installieren</target>
+			</trans-unit>
+
+			<trans-unit id="errors.headline">
+				<source>Runtime errors</source>
+				<target>Laufzeitfehler</target>
+			</trans-unit>
+			<trans-unit id="errors.description">
+				<source>Some errors occurred while running the check!</source>
+				<target>Etliche Fehler sind während des Checks aufgetreten!</target>
+			</trans-unit>
+
+			<trans-unit id="install.installed">
+				<source>Composer is already installed.</source>
+				<target>Composer ist bereits installiert.</target>
+			</trans-unit>
+			<trans-unit id="install.missing-contao">
+				<source>Installation not possible, the Contao installation could not be found.</source>
+				<target>Die Installation ist nicht möglich, es wurde keine Contao Installation gefunden.</target>
+			</trans-unit>
+			<trans-unit id="install.unsupported">
+				<source>Installation not possible, the ZipArchive extension is required.</source>
+				<target>Die Installation ist nicht möglich, die ZipArchive Extension wird benötigt.</target>
+			</trans-unit>
+			<trans-unit id="install.done">
+				<source>Installation finished, in the Contao Backend you find a new menu entry &quot;Package management&quot;.</source>
+				<target>Die Installation war erfolgreich. Im Contao Backend steht nun ein neuer Menüeintrag &quot;Paketverwaltung&quot; zur Verfügung.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

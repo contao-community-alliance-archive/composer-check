@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="other.php" source-language="en">
+		<body>
+			<trans-unit id="contao_community_alliance">
+				<source>Contao Community Alliance</source>
+				<target>Contao Community Alliance</target>
+			</trans-unit>
+			<trans-unit id="more_information">
+				<source>More Information about Composer</source>
+				<target>Mehr Informationen über Composer</target>
+			</trans-unit>
+			<trans-unit id="ticket_system">
+				<source>Composer Bugtracker</source>
+				<target>Composer Ticketsystem</target>
+			</trans-unit>
+			<trans-unit id="website">
+				<source>Website</source>
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="github">
+				<source>Github</source>
+				<target>Github</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

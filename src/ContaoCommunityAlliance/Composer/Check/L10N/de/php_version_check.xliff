@@ -1,0 +1,31 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="php_version_check.php" source-language="en">
+		<body>
+			<trans-unit id="summary_unsupported">
+				<source>PHP %version% is installed, to run composer you need to PHP 5.3.4 or newer.</source>
+				<target>PHP %version% ist installiert, für den Betrieb von Composer wird aber mindestens PHP 5.3.4 benötigt.</target>
+			</trans-unit>
+			<trans-unit id="summary_5.3.2+">
+				<source>PHP %version% is installed, you are able to use composer.</source>
+				<target>PHP %version% ist installiert, du kannst Composer verwenden.</target>
+			</trans-unit>
+			<trans-unit id="summary_5.4+">
+				<source>PHP %version% is installed, you are up to date.</source>
+				<target>PHP %version% ist installiert, du bist up to date.</target>
+			</trans-unit>
+
+			<trans-unit id="description_unsupported">
+				<source>Composer use Namespace which are only supported in PHP 5.3 or newer. We recommend to upgrade your PHP version. The best choice is PHP 5.4 or 5.5, which are realy faster than 5.3.</source>
+				<target>Composer nutzt Namespaces, die erst ab PHP 5.3 unterstützt werden. Wir empfehlen ein Update der PHP-Version. Die beste Wahl ist PHP 5.4 oder 5.5, die zudem schneller als 5.3 sind.</target>
+			</trans-unit>
+			<trans-unit id="description_5.3.2+">
+				<source>You use an supported but deprecated version of PHP. We recommend to upgrade your PHP version to 5.4 or 5.5, which are realy faster than 5.3.</source>
+				<target>Du nutzt eine offiziell gepflegte, aber veraltete PHP-Version. Wir empfehlen ein Update auf 5.4 oder 5.5, die zudem schneller als 5.3 sind.</target>
+			</trans-unit>
+			<trans-unit id="description_5.4+">
+				<source>You use a stable, fast and maintained version of PHP. This is perfect to run composer :-)</source>
+				<target>Du nutzt eine stabile, schnelle und offiziell gepflegte PHP-Version. Das ist perfekt für den Betrieb von Composer :-)</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="" source-language="en">
+		<body>
+			<trans-unit id="summary_disabled">
+				<source>Suhosin extension is disabled</source>
+				<target>Die Suhosin Extension ist deaktiviert</target>
+			</trans-unit>
+			<trans-unit id="summary_whitelisted">
+				<source>PHARs are whitelisted in suhosin</source>
+				<target>PHAR-Dateien sind explizit erlaubt in Suhosin</target>
+			</trans-unit>
+			<trans-unit id="summary_enabled">
+				<source>Suhosin extension is enabled</source>
+				<target>Die Suhosin Extension ist aktiviert</target>
+			</trans-unit>
+
+			<trans-unit id="description_disabled">
+				<source>The Suhosin extensions is known to make problems with composer.</source>
+				<target>Die Suhosin Extension ist bekannt dafür Probleme mit Composer zu verursachen.</target>
+			</trans-unit>
+			<trans-unit id="description_whitelisted">
+				<source>PHAR files are whitelisted in the suhosin executor limitation, this work in most cases but may make problems in some cases.</source>
+				<target>PHAR-Dateien sind explizit erlaubt in Suhosin. Diese Einstellung funktioniert in den meisten Fällen, kann aber in anderen Fällen zu Problemen führen.</target>
+			</trans-unit>
+			<trans-unit id="description_enabled">
+				<source>The Suhosin extensions is known to make problems with composer.</source>
+				<target>Die Suhosin Extension ist bekannt dafür Probleme mit Composer zu verursachen.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
