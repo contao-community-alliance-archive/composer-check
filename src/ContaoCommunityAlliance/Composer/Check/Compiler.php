@@ -244,13 +244,7 @@ EOF;
 		foreach ($iterator as $file) {
 			$pathname = $file->getPathname();
 			$pathInfo = str_replace($rootPath . DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $pathname);
-
-			if (pathinfo($pathname, PATHINFO_EXTENSION) == 'css') {
-				$mime = 'text/css; charset=UTF-8';
-			}
-			else {
-				$mime = finfo_file($finfo, $pathname, FILEINFO_MIME);
-			}
+			$mime     = trim(shell_exec(sprintf('xdg-mime query filetype %s', escapeshellarg($pathname))));
 
 			$assets[$pathInfo] = array(
 				'type'    => $mime,
