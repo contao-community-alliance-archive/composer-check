@@ -57,3 +57,14 @@ class Runtime
 spl_autoload_register('Runtime::autoload');
 set_error_handler('Runtime::error_logger', E_ALL);
 Runtime::$translator = new ContaoCommunityAlliance_Composer_Check_L10N_SimpleTranslator();
+
+if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+	$acceptedLanguages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	foreach ($acceptedLanguages as $acceptedLanguage) {
+		$acceptedLanguage = preg_replace('~;.*$~', '', $acceptedLanguage);
+		if (strlen($acceptedLanguage) == 2) {
+			Runtime::$translator->setLanguage($acceptedLanguage);
+			break;
+		}
+	}
+}
