@@ -854,8 +854,7 @@ class ContaoCommunityAlliance_Composer_Check_L10N_SimpleStaticTranslator
 			return $this;
 		}
 
-		$this->language     = (string) $language;
-		$this->translations = array();
+		$this->language = (string) $language;
 		return $this;
 	}
 
@@ -885,11 +884,16 @@ class ContaoCommunityAlliance_Composer_Check_L10N_SimpleStaticTranslator
 			$language = $this->language;
 		}
 
-		if (!isset($this->translations[$language][$domain])) {
-			return array();
+		$translations = $this->translations['en'][$domain];
+
+		if (isset($this->translations[$language][$domain])) {
+			$translations = array_merge(
+				$translations,
+				$this->translations[$language][$domain]
+			);
 		}
 
-		return $this->translations[$language][$domain];
+		return $translations;
 	}
 
 	/**
@@ -1022,7 +1026,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 <html lang="<?php echo Runtime::$translator->getLanguage(); ?>">
 <head>
 	<meta charset="utf-8">
-	<title>Composer Check 1.0 - 2014-03-17 10:36:54 +0100</title>
+	<title>Composer Check 1.1 - 2014-03-17 11:05:23 +0100</title>
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="generator" content="Contao Community Alliance">
 	<link rel="stylesheet" href="<?php echo $this->basePath; ?>assets/cca/style.css">
@@ -1036,7 +1040,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 		<h1><a target="_blank" href="http://c-c-a.org/"><?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></a></h1>
 	</header>
 	<section>
-		<h2>Composer Check 1.0</h2>
+		<h2>Composer Check 1.1</h2>
 
 		<?php if (count(Runtime::$errors)): ?>
 			<h3><?php echo Runtime::$translator->translate('messages', 'errors.headline'); ?></h3>
@@ -1087,7 +1091,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 
 <footer>
 	<div class="inside">
-		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?><br><?php echo Runtime::$translator->translate('other', 'release') ?>: 1.0, 2014-03-17 10:36:54 +0100</p>
+		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?><br><?php echo Runtime::$translator->translate('other', 'release') ?>: 1.1, 2014-03-17 11:05:23 +0100</p>
 		<ul>
 			<li><a target="_blank" href="http://c-c-a.org/ueber-composer"><?php echo Runtime::$translator->translate('other', 'more_information') ?></a></li>
 			<li><a target="_blank" href="https://github.com/contao-community-alliance/composer/issues"><?php echo Runtime::$translator->translate('other', 'ticket_system') ?></a></li>
@@ -1176,6 +1180,110 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 }
 Runtime::$translator = new ContaoCommunityAlliance_Composer_Check_L10N_SimpleStaticTranslator();
 Runtime::$translator->setTranslations(array (
+  'de' => 
+  array (
+    'checks' => 
+    array (
+      'php_version' => 'Prüfe ob die PHP-Version kompatibel ist.',
+      'php_memory_limit' => 'Prüfe die maximale Speichernutzung.',
+      'php_curl' => 'Prüfe ob die CURL Extension aktiviert ist.',
+      'php_apc' => 'Prüfe ob die PHP Extension APC aktiviert ist.',
+      'php_suhosin' => 'Prüfe ob die PHP Extension Suhosin aktiviert ist.',
+      'php_allow_url_fopen' => 'Prüfe ob allow_url_fopen aktiviert ist.',
+      'process_execute_detached' => 'Check if detached execution is possible.',
+      'contao_safe_mode_hack' => 'Prüfe ob der Contao SMH deaktiviert ist.',
+    ),
+    'contao_safe_mode_hack' => 
+    array (
+      'summary_disabled' => 'Der Safemodehack ist deaktiviert',
+      'summary_enabled' => 'Der Safemodehack ist aktiviert',
+      'description_disabled' => 'Der Safemodehack wird nicht unterstützt von Composer.',
+      'description_enabled' => 'Der Safemodehack wird nicht unterstützt von Composer.',
+    ),
+    'messages' => 
+    array (
+      'checks.headline' => 'Systeminformationen',
+      'status.headline' => 'Systemstatus',
+      'status.unsupported' => 'Composer wird auf deinem System nicht unterstützt.',
+      'status.maybe_supported' => 'Composer könnte möglicherweise auf deinem System verwendet werden. Bitte ließ die weiteren Informationen der einzelnen Checks.',
+      'status.supported' => 'Composer wird auf deinem System unterstützt.',
+      'status.unknown' => 'Wir konnten nicht ermitteln ob Composer auf dem System funktionieren würde.',
+      'status.install' => 'Composer installieren',
+      'errors.headline' => 'Laufzeitfehler',
+      'errors.description' => 'Etliche Fehler sind während des Checks aufgetreten!',
+      'install.installed' => 'Composer ist bereits installiert.',
+      'install.missing-contao' => 'Die Installation ist nicht möglich, es wurde keine Contao Installation gefunden.',
+      'install.unsupported' => 'Die Installation ist nicht möglich, die ZipArchive Extension wird benötigt.',
+      'install.done' => 'Die Installation war erfolgreich. Im Contao Backend steht nun ein neuer Menüeintrag "Paketverwaltung" zur Verfügung.',
+    ),
+    'other' => 
+    array (
+      'contao_community_alliance' => 'Contao Community Alliance',
+      'more_information' => 'Mehr Informationen über Composer',
+      'ticket_system' => 'Composer Ticketsystem',
+      'website' => 'Website',
+      'github' => 'Github',
+    ),
+    'php_allow_url_fopen' => 
+    array (
+      'summary_enabled' => 'allow_url_fopen ist aktiviert',
+      'summary_disabled' => 'allow_url_fopen ist deaktiviert',
+      'description_enabled' => 'allow_url_fopen wird von Composer für den Download der Dateien benötigt.',
+      'description_disabled' => 'allow_url_fopen wird von Composer für den Download der Dateien benötigt.',
+    ),
+    'php_apc' => 
+    array (
+      'summary_apcu_enabled' => 'Die APCu Extension ist aktiviert',
+      'summary_disabled' => 'Die APCu Extension ist deaktiviert',
+      'summary_enabled' => 'Die APC Extension ist aktiviert',
+      'description_apcu_enabled' => 'The ACPu extension is known to work with composer.',
+      'description_disabled' => 'The APC extensions opcode cache is known to make problems with composer.',
+      'description_enabled' => 'The APC extensions opcode cache is known to make problems with composer.',
+    ),
+    'php_curl' => 
+    array (
+      'summary_enabled' => 'Die CURL Extension ist aktiviert',
+      'summary_disabled' => 'Die CURL Extension ist deaktiviert',
+      'description_enabled' => 'Die CURL Extension wird vom Contao Composer Client benötigt.',
+      'description_disabled' => 'Die CURL Extension wird vom Contao Composer Client benötigt.',
+    ),
+    'php_memory_limit' => 
+    array (
+      'summary_unlimited' => 'Die Speichernutzung ist nicht begrenzt.',
+      'summary_good' => 'Das Speicherlimit ist %memory_limit%, was sehr gut ist.',
+      'summary_okay' => 'Das Speicherlimit ist %memory_limit%, was ok ist.',
+      'summary_increased' => 'Your memory limit is increased to %memory_limit%.',
+      'summary_low' => 'Das Speicherlimit ist %memory_limit%, was zu wenig ist.',
+      'description_unlimited' => 'Eine unbegrenzte Speichernutzung ist perfekt für den Betrieb von Composer in jedem System.',
+      'description_good' => 'A memory limit of 1024 MiB or higher is pretty good run composer, even in growing environments.',
+      'description_okay' => 'A memory limit of 512 MiB is the minimum to run composer, but it may be too less in growing environments.',
+      'description_increased' => 'We have increased the memory limit to %memory_limit%, if required it is possible to increase it to a higher value.',
+      'description_low' => 'A memory limit of 512 MiB is the minimum to run composer, it may run with %memory_limit% but it is not supposed to work.',
+    ),
+    'php_suhosin' => 
+    array (
+      'summary_disabled' => 'Die Suhosin Extension ist deaktiviert',
+      'summary_whitelisted' => 'PHAR-Dateien sind explizit erlaubt in Suhosin',
+      'summary_enabled' => 'Die Suhosin Extension ist aktiviert',
+      'description_disabled' => 'Die Suhosin Extension ist bekannt dafür Probleme mit Composer zu verursachen.',
+      'description_whitelisted' => 'PHAR-Dateien sind explizit erlaubt in Suhosin. Diese Einstellung funktioniert in den meisten Fällen, kann aber in anderen Fällen zu Problemen führen.',
+      'description_enabled' => 'Die Suhosin Extension ist bekannt dafür Probleme mit Composer zu verursachen.',
+    ),
+    'php_version_check' => 
+    array (
+      'summary_unsupported' => 'PHP %version% ist installiert, für den Betrieb von Composer wird aber mindestens PHP 5.3.4 benötigt.',
+      'summary_5.3.2+' => 'PHP %version% ist installiert, du kannst Composer verwenden.',
+      'summary_5.4+' => 'PHP %version% ist installiert, du bist up to date.',
+      'description_unsupported' => 'Composer nutzt Namespaces, die erst ab PHP 5.3 unterstützt werden. Wir empfehlen ein Update der PHP-Version. Die beste Wahl ist PHP 5.4 oder 5.5, die zudem schneller als 5.3 sind.',
+      'description_5.3.2+' => 'Du nutzt eine offiziell gepflegte, aber veraltete PHP-Version. Wir empfehlen ein Update auf 5.4 oder 5.5, die zudem schneller als 5.3 sind.',
+      'description_5.4+' => 'Du nutzt eine stabile, schnelle und offiziell gepflegte PHP-Version. Das ist perfekt für den Betrieb von Composer :-)',
+    ),
+    'process_execute_detached' => 
+    array (
+      'summary_unsupported' => 'Die Funktion `shell_exec` ist deaktiviert auf dem System.',
+      'description_unsupported' => 'In großen Installationen kann es sein, dass Composer mehr Zeit für ein Update benötigt. Mithilfe des Updateprozesses im Hintergrund kann Composer die maximale Ausführungszeit eines PHP-Skripts umgehen.',
+    ),
+  ),
   'en' => 
   array (
     'checks' => 
@@ -1292,6 +1400,17 @@ Runtime::$translator->setTranslations(array (
     ),
   ),
 ));
+
+if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+	$acceptedLanguages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	foreach ($acceptedLanguages as $acceptedLanguage) {
+		$acceptedLanguage = preg_replace('~;.*$~', '', $acceptedLanguage);
+		if (strlen($acceptedLanguage) == 2) {
+			Runtime::$translator->setLanguage($acceptedLanguage);
+			break;
+		}
+	}
+}
 
 if (isset($_SERVER['PATH_INFO']) && strlen($_SERVER['PATH_INFO']) > 1) {
 	$pathInfo = $_SERVER['PATH_INFO'];
