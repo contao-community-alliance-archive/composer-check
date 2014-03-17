@@ -13,6 +13,25 @@
  */
 class ContaoCommunityAlliance_Composer_Check_Controller
 {
+	protected $basePath;
+
+	/**
+	 * @param mixed $base
+	 */
+	public function setBasePath($base)
+	{
+		$this->basePath = (string) $base;
+		return $this;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getBasePath()
+	{
+		return $this->basePath;
+	}
+
 	public function run()
 	{
 		$runner = new ContaoCommunityAlliance_Composer_Check_CheckRunner();
@@ -81,9 +100,9 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 	<title>Composer Check @version@ - @datetime@</title>
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="generator" content="Contao Community Alliance">
-	<link rel="stylesheet" href="assets/cca/style.css">
-	<link rel="stylesheet" href="assets/opensans/stylesheet.css">
-	<link rel="stylesheet" href="assets/style.css">
+	<link rel="stylesheet" href="<?php echo $this->basePath; ?>assets/cca/style.css">
+	<link rel="stylesheet" href="<?php echo $this->basePath; ?>assets/opensans/stylesheet.css">
+	<link rel="stylesheet" href="<?php echo $this->basePath; ?>assets/style.css">
 </head>
 <body>
 
