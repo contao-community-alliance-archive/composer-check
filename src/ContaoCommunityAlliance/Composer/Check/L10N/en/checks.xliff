@@ -21,7 +21,7 @@
 			<trans-unit id="php_allow_url_fopen">
 				<source>Check if the allow_url_fopen is enabled.</source>
 			</trans-unit>
-			<trans-unit id="process_execute_detached">
+			<trans-unit id="php_process_execute_detached">
 				<source>Check if detached execution is possible.</source>
 			</trans-unit>
 			<trans-unit id="contao_safe_mode_hack">

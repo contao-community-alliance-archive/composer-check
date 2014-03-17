@@ -3,10 +3,16 @@
 	   xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="process_execute_detached.php" source-language="en" datatype="php">
 		<body>
+			<trans-unit id="summary_supported">
+				<source>The `shell_exec` function is enabled</source>
+			</trans-unit>
 			<trans-unit id="summary_unsupported">
-				<source>The `shell_exec` function is disabled on your system.</source>
+				<source>The `shell_exec` function is disabled</source>
 			</trans-unit>
 
+			<trans-unit id="description_supported">
+				<source>If Composer may take too while to run the update within the max_execution_time, you can run composer in the background as detached process.</source>
+			</trans-unit>
 			<trans-unit id="description_unsupported">
 				<source>In growing systems, Composer may take a while to run the update. Run Composer in the background is one way, to work around the maximum execution time.</source>
 			</trans-unit>
