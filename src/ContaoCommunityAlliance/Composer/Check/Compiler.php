@@ -211,6 +211,17 @@ EOF;
 Runtime::\$translator = new ContaoCommunityAlliance_Composer_Check_L10N_SimpleStaticTranslator();
 Runtime::\$translator->setTranslations($translations);
 
+if (isset(\$_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+	\$acceptedLanguages = explode(',', \$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	foreach (\$acceptedLanguages as \$acceptedLanguage) {
+		\$acceptedLanguage = preg_replace('~;.*$~', '', \$acceptedLanguage);
+		if (strlen(\$acceptedLanguage) == 2) {
+			Runtime::\$translator->setLanguage(\$acceptedLanguage);
+			break;
+		}
+	}
+}
+
 if (isset(\$_SERVER['PATH_INFO']) && strlen(\$_SERVER['PATH_INFO']) > 1) {
 	\$pathInfo = \$_SERVER['PATH_INFO'];
 	\$assets   = $assets;
