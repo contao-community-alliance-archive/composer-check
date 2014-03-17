@@ -1,7 +1,7 @@
 <xliff version="1.2"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="process_execute_detached.php" source-language="en" datatype="php">
+	<file original="php_proc_open.php" source-language="en" datatype="php">
 		<body>
 			<trans-unit id="summary_supported">
 				<source>The `proc_open` function is enabled</source>
