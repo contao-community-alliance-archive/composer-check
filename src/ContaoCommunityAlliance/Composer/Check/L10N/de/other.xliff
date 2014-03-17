@@ -5,6 +5,9 @@
 				<source>Contao Community Alliance</source>
 				<target>Contao Community Alliance</target>
 			</trans-unit>
+			<trans-unit id="release">
+				<source>Release</source>
+			</trans-unit>
 			<trans-unit id="more_information">
 				<source>More Information about Composer</source>
 				<target>Mehr Informationen über Composer</target>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<file datatype="php" original="php_proc_open.php" source-language="en">
+		<body>
+			<trans-unit id="summary_supported">
+				<source>The `proc_open` function is enabled</source>
+				<target>Die Funktion `proc_open` ist aktiviert</target>
+			</trans-unit>
+			<trans-unit id="summary_unsupported">
+				<source>The `proc_open` function is disabled</source>
+				<target>Die Funktion `proc_open` ist deaktiviert</target>
+			</trans-unit>
+
+			<trans-unit id="description_supported">
+				<source>You can use composer in source installation mode.</source>
+				<target>Composer kann im Entwicklermodus betrieben werden.</target>
+			</trans-unit>
+			<trans-unit id="description_unsupported">
+				<source>The source installation mode will not work, because composer is unable to execute git/ht/svn without the `proc_open` function.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
