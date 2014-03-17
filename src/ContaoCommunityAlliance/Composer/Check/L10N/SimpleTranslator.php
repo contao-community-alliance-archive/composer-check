@@ -74,7 +74,12 @@ class ContaoCommunityAlliance_Composer_Check_L10N_SimpleTranslator
 				}
 			}
 			else {
-				$this->translations[$domain] = array();
+				if ($language != 'en') {
+					$this->getTranslations($domain, 'en');
+				}
+				else {
+					$this->translations[$domain] = array();
+				}
 
 				$doc = new DOMDocument();
 				$doc->load($file);
