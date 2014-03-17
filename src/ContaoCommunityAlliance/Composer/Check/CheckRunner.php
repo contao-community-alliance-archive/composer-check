@@ -22,6 +22,7 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 		'php_suhosin'                  => 'ContaoCommunityAlliance_Composer_Check_PHPSuhosinCheck',
 		'php_allow_url_fopen'          => 'ContaoCommunityAlliance_Composer_Check_PHPAllowUrlFopenCheck',
 		'php_process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_PHPProcessExecuteDetachedCheck',
+		'php_proc_open'                => 'ContaoCommunityAlliance_Composer_Check_PHPProcOpenCheck',
 		// Contao
 		'contao_safe_mode_hack'        => 'ContaoCommunityAlliance_Composer_Check_ContaoSafeModeHackCheck',
 	);

@@ -24,6 +24,9 @@
 			<trans-unit id="php_process_execute_detached">
 				<source>Check if detached execution is possible.</source>
 			</trans-unit>
+			<trans-unit id="php_proc_open">
+				<source>Check if the php_proc_open function is enabled.</source>
+			</trans-unit>
 			<trans-unit id="contao_safe_mode_hack">
 				<source>Check if the Contao SMH is disabled.</source>
 			</trans-unit>
