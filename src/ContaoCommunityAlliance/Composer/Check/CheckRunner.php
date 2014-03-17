@@ -15,16 +15,16 @@ class ContaoCommunityAlliance_Composer_Check_CheckRunner
 {
 	public static $checks = array(
 		// PHP
-		'php_version'                  => 'ContaoCommunityAlliance_Composer_Check_PHPVersionCheck',
-		'php_memory_limit'             => 'ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck',
-		'php_curl'                     => 'ContaoCommunityAlliance_Composer_Check_PHPCurlCheck',
-		'php_apc'                      => 'ContaoCommunityAlliance_Composer_Check_PHPApcCheck',
-		'php_suhosin'                  => 'ContaoCommunityAlliance_Composer_Check_PHPSuhosinCheck',
-		'php_allow_url_fopen'          => 'ContaoCommunityAlliance_Composer_Check_PHPAllowUrlFopenCheck',
-		'php_process_execute_detached' => 'ContaoCommunityAlliance_Composer_Check_PHPProcessExecuteDetachedCheck',
-		'php_proc_open'                => 'ContaoCommunityAlliance_Composer_Check_PHPProcOpenCheck',
+		'php_version'           => 'ContaoCommunityAlliance_Composer_Check_PHPVersionCheck',
+		'php_memory_limit'      => 'ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck',
+		'php_curl'              => 'ContaoCommunityAlliance_Composer_Check_PHPCurlCheck',
+		'php_apc'               => 'ContaoCommunityAlliance_Composer_Check_PHPApcCheck',
+		'php_suhosin'           => 'ContaoCommunityAlliance_Composer_Check_PHPSuhosinCheck',
+		'php_allow_url_fopen'   => 'ContaoCommunityAlliance_Composer_Check_PHPAllowUrlFopenCheck',
+		'php_shell_exec'        => 'ContaoCommunityAlliance_Composer_Check_PHPShellExecCheck',
+		'php_proc_open'         => 'ContaoCommunityAlliance_Composer_Check_PHPProcOpenCheck',
 		// Contao
-		'contao_safe_mode_hack'        => 'ContaoCommunityAlliance_Composer_Check_ContaoSafeModeHackCheck',
+		'contao_safe_mode_hack' => 'ContaoCommunityAlliance_Composer_Check_ContaoSafeModeHackCheck',
 	);
 
 	/**
