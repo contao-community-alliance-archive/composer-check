@@ -203,8 +203,8 @@ EOF;
 		$translations       = $translationBuilder->build();
 		$translations       = var_export($translations, true);
 
-		$assets = $this->serializeAssets($rootPath);
-		$assets = var_export($assets, true);
+		$assets = $this->collectAssets($rootPath);
+		$assets = $this->serializeAssets($assets);
 
 		$php = <<<EOF
 <?php
@@ -243,7 +243,7 @@ EOF;
 		$this->appendCode($stream, $php, $sr);
 	}
 
-	protected function serializeAssets($rootPath)
+	protected function collectAssets($rootPath)
 	{
 		$assets = array();
 
@@ -263,6 +263,11 @@ EOF;
 		}
 
 		return $assets;
+	}
+
+	protected function serializeAssets($assets)
+	{
+		return var_export($assets, true);
 	}
 
 	protected function appendFile($stream, $file, $sr)
