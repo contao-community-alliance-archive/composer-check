@@ -1,7 +1,7 @@
 <xliff version="1.2"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" source-language="en" datatype="php">
+	<file original="php_memory_limit.php" source-language="en" datatype="php">
 		<body>
 			<trans-unit id="summary_unlimited">
 				<source>Your memory usage is not limited.</source>
