@@ -31,3 +31,25 @@ If you have trouble running the check, try the not optimised/obfuscated
 [composer-check-dbg.php](https://raw.githubusercontent.com/contao-community-alliance/composer-check/master/composer-check-dbg.php).
 
 You also can clone this repository and navigate to its root with your browser `http://example.com/path/to/composer-check/`.
+
+Build process
+-------------
+
+The compiler require `xdg-mime` and `git` command.
+
+```
+// push translations
+tx push -s
+// fetch translations
+tx pull -a
+
+// ... commit changes here and make a new tag
+
+// build the composer-check.php
+php build.php -o -O
+// build the composer-check-dbg.php
+php build.php -f composer-check-dbg.php
+// add pre-build files
+git add composer-check.php composer-check-dbg.php
+git commit -m "Add pre-build composer-check[-dbg].php for Version $(git describe)"
+```
