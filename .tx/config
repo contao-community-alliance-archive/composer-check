@@ -1,0 +1,59 @@
+[composer-check.php_memory_limit]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/php_memory_limit.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/php_memory_limit.xliff
+source_lang = en
+
+[composer-check.php_curl]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/php_curl.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/php_curl.xliff
+source_lang = en
+
+[composer-check.php_apc]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/php_apc.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/php_apc.xliff
+source_lang = en
+
+[composer-check.php_allow_url_fopen]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/php_allow_url_fopen.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/php_allow_url_fopen.xliff
+source_lang = en
+
+[composer-check.php_suhosin]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/php_suhosin.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/php_suhosin.xliff
+source_lang = en
+
+[composer-check.checks]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/checks.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/checks.xliff
+source_lang = en
+
+[composer-check.process_execute_detached]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/process_execute_detached.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/process_execute_detached.xliff
+source_lang = en
+
+[composer-check.php_version_check]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/php_version_check.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/php_version_check.xliff
+source_lang = en
+
+[composer-check.messages]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/messages.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/messages.xliff
+source_lang = en
+
+[composer-check.other]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/other.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/other.xliff
+source_lang = en
+
+[composer-check.contao_safe_mode_hack]
+file_filter = src/ContaoCommunityAlliance/Composer/Check/L10N/<lang>/contao_safe_mode_hack.xliff
+source_file = src/ContaoCommunityAlliance/Composer/Check/L10N/en/contao_safe_mode_hack.xliff
+source_lang = en
+
+[main]
+host = https://www.transifex.com
+type = XLIFF
+
