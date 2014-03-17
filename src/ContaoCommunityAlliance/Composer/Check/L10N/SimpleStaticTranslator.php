@@ -62,11 +62,16 @@ class ContaoCommunityAlliance_Composer_Check_L10N_SimpleStaticTranslator
 			$language = $this->language;
 		}
 
-		if (!isset($this->translations[$language][$domain])) {
-			return array();
+		$translations = $this->translations['en'][$domain];
+
+		if (isset($this->translations[$language][$domain])) {
+			$translations = array_merge(
+				$translations,
+				$this->translations[$language][$domain]
+			);
 		}
 
-		return $this->translations[$language][$domain];
+		return $translations;
 	}
 
 	/**
