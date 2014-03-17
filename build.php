@@ -12,46 +12,21 @@
  * @link       http://c-c-a.org
  */
 
-class build
-{
-	public function run()
-	{
-		$phar = new Phar('composer-check.phar', null, 'composer-check.phar');
-		$phar->setSignatureAlgorithm(\Phar::SHA1);
-		$phar->startBuffering();
+	require __DIR__ . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
-		$this->add($phar, 'assets');
-		$this->add($phar, 'src');
-		$this->add($phar, 'bootstrap.php');
-		$this->add($phar, 'console.php');
-		$this->add($phar, 'index.php');
+$build = new ContaoCommunityAlliance_Composer_Check_Compiler();
 
-		$phar->setStub(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'stub.php'));
-		$phar->stopBuffering();
+$arg = reset($argv);
+do {
+	if ($arg == '-o' || $arg == '--optimize') {
+		$build->setOptimize(true);
 	}
-
-	/**
-	 * Recursively add files and directories to the phar.
-	 *
-	 * @param Phar   $phar
-	 * @param string $path
-	 */
-	protected function add(Phar $phar, $relative)
-	{
-		$path = __DIR__ . DIRECTORY_SEPARATOR . $relative;
-
-		if (is_dir($path)) {
-			foreach (scandir($path) as $child) {
-				if ($child[0] != '.') {
-					$this->add($phar, $relative . DIRECTORY_SEPARATOR . $child);
-				}
-			}
-		}
-		else if (is_file($path)) {
-			$phar->addFromString($relative, file_get_contents($path));
-		}
+	else if ($arg == '-O' || $arg == '--obfuscate') {
+		$build->setObfuscate(true);
 	}
-}
+	else if ($arg == '-f' || $arg == '--file') {
+		$build->setFilename(next($argv));
+	}
+} while ($arg = next($argv));
 
-$build = new build();
-$build->run();
+$build->compile();
