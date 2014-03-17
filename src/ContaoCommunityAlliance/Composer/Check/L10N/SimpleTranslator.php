@@ -126,6 +126,14 @@ class ContaoCommunityAlliance_Composer_Check_L10N_SimpleTranslator
 			);
 		}
 
+		// parse some markdown syntax
+		if (PHP_SAPI != 'cli') {
+			$string = preg_replace('~`([^`]*?)`~', '<code>$1</code>', $string);
+			$string = preg_replace('~\*\*\*([^\*]*?)\*\*\*~', '<strong><em>$1</em></strong>', $string);
+			$string = preg_replace('~\*\*([^\*]*?)\*\*~', '<strong>$1</strong>', $string);
+			$string = preg_replace('~\*([^\*]*?)\*~', '<em>$1</em>', $string);
+		}
+
 		return $string;
 	}
 }
