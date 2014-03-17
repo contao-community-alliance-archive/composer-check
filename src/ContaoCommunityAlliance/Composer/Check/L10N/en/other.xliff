@@ -6,6 +6,9 @@
 			<trans-unit id="contao_community_alliance">
 				<source>Contao Community Alliance</source>
 			</trans-unit>
+			<trans-unit id="release">
+				<source>Release</source>
+			</trans-unit>
 			<trans-unit id="more_information">
 				<source>More Information about Composer</source>
 			</trans-unit>

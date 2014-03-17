@@ -78,7 +78,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 <html lang="<?php echo Runtime::$translator->getLanguage(); ?>">
 <head>
 	<meta charset="utf-8">
-	<title>Composer Check 1.0</title>
+	<title>Composer Check @version@ - @datetime@</title>
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="generator" content="Contao Community Alliance">
 	<link rel="stylesheet" href="assets/cca/style.css">
@@ -92,7 +92,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 		<h1><a target="_blank" href="http://c-c-a.org/"><?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></a></h1>
 	</header>
 	<section>
-		<h2>Composer Check 1.0</h2>
+		<h2>Composer Check @version@</h2>
 
 		<?php if (count(Runtime::$errors)): ?>
 			<h3><?php echo Runtime::$translator->translate('messages', 'errors.headline'); ?></h3>
@@ -143,7 +143,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 
 <footer>
 	<div class="inside">
-		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></p>
+		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?><br><?php echo Runtime::$translator->translate('other', 'release') ?>: @version@, @datetime@</p>
 		<ul>
 			<li><a target="_blank" href="http://c-c-a.org/ueber-composer"><?php echo Runtime::$translator->translate('other', 'more_information') ?></a></li>
 			<li><a target="_blank" href="https://github.com/contao-community-alliance/composer/issues"><?php echo Runtime::$translator->translate('other', 'ticket_system') ?></a></li>
