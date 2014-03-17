@@ -247,8 +247,6 @@ EOF;
 	{
 		$assets = array();
 
-		$finfo = finfo_open();
-
 		$iterator = new RecursiveDirectoryIterator($rootPath . DIRECTORY_SEPARATOR . 'assets');
 		$iterator = new RecursiveIteratorIterator($iterator);
 
@@ -263,8 +261,6 @@ EOF;
 				'content' => file_get_contents($pathname),
 			);
 		}
-
-		finfo_close($finfo);
 
 		return $assets;
 	}
