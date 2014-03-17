@@ -229,7 +229,7 @@ if (isset(\$_SERVER['PATH_INFO']) && strlen(\$_SERVER['PATH_INFO']) > 1) {
 	\$asset    = \$assets[\$pathInfo];
 
 	header('Content-Type: ' . \$asset['type']);
-	echo \$asset['content'];
+	echo base64_decode(\$asset['content']);
 	exit;
 }
 else {
@@ -258,7 +258,7 @@ EOF;
 
 			$assets[$pathInfo] = array(
 				'type'    => $mime,
-				'content' => file_get_contents($pathname),
+				'content' => base64_encode(file_get_contents($pathname)),
 			);
 		}
 
