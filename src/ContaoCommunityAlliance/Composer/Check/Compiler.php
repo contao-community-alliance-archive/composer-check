@@ -142,6 +142,7 @@ class ContaoCommunityAlliance_Composer_Check_Compiler
 		// finish file
 		$this->finishFile($stream, $sr, $rootPath);
 
+		fflush($stream);
 		fclose($stream);
 	}
 
