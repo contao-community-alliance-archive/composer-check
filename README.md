@@ -14,7 +14,8 @@ Installation
 
 Open [composer-check.php](https://raw.githubusercontent.com/contao-community-alliance/composer-check/master/composer-check.php)
 in your browser, press `Ctrl+S` or use the Menu `File -> Save` to save the file.
-Put the `composer-check.php` in your Contao installation or upload it via FTP.
+Put the `composer-check.php` in your Contao installation or upload it via FTP (**Warning: always use BINARY Transfer!!!**)
+or something similar.
 
 ### Unix
 
