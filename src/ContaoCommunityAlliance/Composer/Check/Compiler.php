@@ -328,9 +328,13 @@ EOF;
 			}
 			else if ($this->obfuscate && T_INLINE_HTML === $token[0]) {
 				$html = $token[1];
-				$html = preg_replace('~>[\s\n]+~', '>', $html);
-				$html = preg_replace('~[\s\n]+<~', '<', $html);
-				$html = trim($html);
+				$html = preg_replace('~>[\s\n]+<~', '><', $html);
+				$html = preg_replace('~>[\s\n]+<~', '><', $html);
+				$html = preg_replace('~>[\s\n]+~', '> ', $html);
+				$html = preg_replace('~[\s\n]+<~', ' <', $html);
+				$html = preg_replace('~^\t+~', '', $html);
+				$html = preg_replace('~^\s+~', ' ', $html);
+				$html = preg_replace('~\s+$~', ' ', $html);
 				$output .= $html;
 			}
 			else {
