@@ -32,8 +32,7 @@ class ContaoCommunityAlliance_Composer_Check_L10N_SimpleStaticTranslator
 			return $this;
 		}
 
-		$this->language     = (string) $language;
-		$this->translations = array();
+		$this->language = (string) $language;
 		return $this;
 	}
 
