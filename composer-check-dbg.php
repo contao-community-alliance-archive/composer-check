@@ -483,7 +483,7 @@ class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 				);
 			}
 			else if ($memoryLimit >= 512 * 1024 * 1024) {
-				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN;
+				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK;
 				$summary     = Runtime::$translator->translate(
 					'php_memory_limit',
 					'summary_okay',
@@ -496,7 +496,7 @@ class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 				);
 			}
 			else {
-				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_ERROR;
+				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARNs;
 				$summary     = Runtime::$translator->translate(
 					'php_memory_limit',
 					'summary_low',
@@ -1026,7 +1026,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 <html lang="<?php echo Runtime::$translator->getLanguage(); ?>">
 <head>
 	<meta charset="utf-8">
-	<title>Composer Check 1.2 - 2014-03-17 16:33:08 +0100</title>
+	<title>Composer Check 1.3 - 2014-03-18 08:14:48 +0100</title>
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="generator" content="Contao Community Alliance">
 	<link rel="stylesheet" href="<?php echo $this->basePath; ?>assets/cca/style.css">
@@ -1040,7 +1040,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 		<h1><a target="_blank" href="http://c-c-a.org/"><?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?></a></h1>
 	</header>
 	<section>
-		<h2>Composer Check 1.2</h2>
+		<h2>Composer Check 1.3</h2>
 
 		<?php if (count(Runtime::$errors)): ?>
 			<h3><?php echo Runtime::$translator->translate('messages', 'errors.headline'); ?></h3>
@@ -1091,7 +1091,7 @@ class ContaoCommunityAlliance_Composer_Check_Controller
 
 <footer>
 	<div class="inside">
-		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?><br><?php echo Runtime::$translator->translate('other', 'release') ?>: 1.2, 2014-03-17 16:33:08 +0100</p>
+		<p>&copy; <?php echo date('Y'); ?> <?php echo Runtime::$translator->translate('other', 'contao_community_alliance') ?><br><?php echo Runtime::$translator->translate('other', 'release') ?>: 1.3, 2014-03-18 08:14:48 +0100</p>
 		<ul>
 			<li><a target="_blank" href="http://c-c-a.org/ueber-composer"><?php echo Runtime::$translator->translate('other', 'more_information') ?></a></li>
 			<li><a target="_blank" href="https://github.com/contao-community-alliance/composer/issues"><?php echo Runtime::$translator->translate('other', 'ticket_system') ?></a></li>
