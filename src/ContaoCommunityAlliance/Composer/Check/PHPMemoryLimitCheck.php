@@ -71,7 +71,7 @@ class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 				);
 			}
 			else if ($memoryLimit >= 512 * 1024 * 1024) {
-				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN;
+				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_OK;
 				$summary     = Runtime::$translator->translate(
 					'php_memory_limit',
 					'summary_okay',
@@ -84,7 +84,7 @@ class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 				);
 			}
 			else {
-				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_ERROR;
+				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARNs;
 				$summary     = Runtime::$translator->translate(
 					'php_memory_limit',
 					'summary_low',
