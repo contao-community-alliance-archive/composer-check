@@ -84,7 +84,7 @@ class ContaoCommunityAlliance_Composer_Check_PHPMemoryLimitCheck
 				);
 			}
 			else {
-				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARNs;
+				$state       = ContaoCommunityAlliance_Composer_Check_StatusInterface::STATE_WARN;
 				$summary     = Runtime::$translator->translate(
 					'php_memory_limit',
 					'summary_low',
